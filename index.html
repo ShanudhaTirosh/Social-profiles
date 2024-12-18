@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Social Links</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --blur-color: rgba(255, 255, 255, 0.2);
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        body {
+            background: var(--primary-gradient);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .glassmorphic-container {
+            background: var(--blur-color);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.125);
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+            position: relative;
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            position: absolute;
+            top: -75px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .social-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            margin-bottom: 15px;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: white;
+        }
+
+        .social-card:hover {
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .social-icon {
+            font-size: 2.5rem;
+            margin-right: 15px;
+            opacity: 0.8;
+        }
+
+        .social-links-section {
+            margin-top: 80px; /* Space for profile image */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .social-card {
+            animation: fadeIn 0.5s ease forwards;
+            opacity: 0;
+            animation-delay: calc(var(--delay) * 0.1s);
+        }
+    </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="glassmorphic-container text-center">
+            <img src="1.png"  class="profile-image">
+            <div class="social-links-section">
+                <h2 class="text-white mb-4">Your Name</h2>
+                <div class="row">
+                    <div class="col-12">
+                        <a href="https://twitter.com/yourhandle" class="social-card" style="--delay: 1">
+                            <i class="fab fa-twitter social-icon"></i>
+                            <span>Twitter</span>
+                        </a>
+                        <a href="https://linkedin.com/in/yourprofile" class="social-card" style="--delay: 2">
+                            <i class="fab fa-linkedin social-icon"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://github.com/Shanudhatirosh" class="social-card" style="--delay: 3">
+                            <i class="fab fa-github social-icon"></i>
+                            <span>GitHub</span>
+                        </a>
+                         <a href="https://youtube.com/@shanu_fx_lk?si=NFBL76cmDrST6PtJ" class="social-card" style="--delay: 4">
+                            <i class="fab fa-youtube social-icon"></i>
+                            <span>Youtube</span>
+                            </a>
+                           
+                        <a href="https://wa.me/message/7EQ5767QQETQG1" class="social-card" style="--delay: 4">
+                            <i class="fab fa-whatsapp social-icon"></i>
+                            <span>Whatsapp</span>
+                            </a>
+                            <a href="https://www.facebook.com/tirosh.shanudha?mibextid=ZbWKwL" class="social-card" style="--delay: 4">
+                            <i class="fab fa-facebook social-icon"></i>
+                            <span>Facebook</span>
+                        </a>
+                        <a href="https://www.tiktok.com/@shanudha_fx?_t=ZS-8sK0GM40rB9&_r=1" class="social-card" style="--delay: 4">
+                            <i class="fab fa-tiktok social-icon"></i>
+                            <span>Tiktok</span>
+                            </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const socialCards = document.querySelectorAll('.social-card');
+            socialCards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    card.style.transform = 'scale(1.05)';
+                });
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'scale(1)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
